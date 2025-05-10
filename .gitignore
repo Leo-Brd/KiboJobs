@@ -1,0 +1,7 @@
+context.md
+
+**/.env
+*/env/
+**/__pycache__/
+
+*/node_modules
