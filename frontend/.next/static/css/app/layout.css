@@ -2,16 +2,63 @@
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: rgb(245, 245, 245);
+  --foreground: rgb(2, 8, 23);
+  --muted: rgb(241, 245, 249);
+  --muted-foreground: rgb(100, 116, 139);
+  --popover: rgb(255, 255, 255);
+  --popover-foreground: rgb(2, 8, 23);
+  --card: rgb(255, 255, 255);
+  --card-foreground: rgb(2, 8, 23);
+  --border: rgb(226, 232, 240);
+  --input: rgb(226, 232, 240);
+  --primary: rgb(8, 155, 69);
+  --primary-foreground: rgb(250, 250, 249);
+  --secondary: rgb(255, 255, 255);
+  --secondary-foreground: rgb(4, 149, 76);
+  --accent: rgb(235, 249, 242);
+  --accent-foreground: rgb(0, 102, 60);
+  --destructive: rgb(239, 68, 68);
+  --destructive-foreground: rgb(255, 255, 255);
+  --ring: rgb(0, 204, 102);
+  --chart-1: rgb(0, 0, 0);
+  --chart-2: rgb(0, 0, 0);
+  --chart-3: rgb(0, 0, 0);
+  --chart-4: rgb(0, 0, 0);
+  --chart-5: rgb(0, 0, 0);
 }
 
+/* Les variables pour le thème sombre sont conservées mais non appliquées */
+/*
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: rgb(200, 54, 89);
+    --foreground: 144 36% 99%;
+    --muted: 114 12% 7%;
+    --muted-foreground: 114 3% 68%;
+    --popover: 144 47% 0%;
+    --popover-foreground: 144 36% 99%;
+    --card: 144 47% 0%;
+    --card-foreground: 144 36% 99%;
+    --border: 144 13% 10%;
+    --input: 144 13% 10%;
+    --primary: 144 82% 58%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 114 82% 58%;
+    --secondary-foreground: 0 0% 0%;
+    --accent: 174 82% 58%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 19 83% 57%;
+    --destructive-foreground: 0 0% 0%;
+    --ring: 144 82% 58%;
+    --chart-1: 144 82% 58%;
+    --chart-2: 114 82% 58%;
+    --chart-3: 174 82% 58%;
+    --chart-4: 114 82% 61%;
+    --chart-5: 144 85% 58%;
   }
 }
+*/
 
 html,
 body {
@@ -36,11 +83,5 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
