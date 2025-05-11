@@ -23,6 +23,7 @@
   --chart-3: rgb(0, 0, 0);
   --chart-4: rgb(0, 0, 0);
   --chart-5: rgb(0, 0, 0);
+  --radius: 0.5rem;
 }
 
 /* Les variables pour le thème sombre sont conservées mais non appliquées */

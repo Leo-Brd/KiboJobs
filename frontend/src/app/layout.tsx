@@ -1,4 +1,5 @@
 import "./globals.css";
+import Header from '@/components/header/header';
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
       </head>
       <body>
+        <Header />
         {children}
       </body>
     </html>
