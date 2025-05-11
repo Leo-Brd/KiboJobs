@@ -1,4 +1,3 @@
-import Header from '@/components/header/header';
 import styles from './landingPage.module.scss';
 
 export default function LandingPage() {
