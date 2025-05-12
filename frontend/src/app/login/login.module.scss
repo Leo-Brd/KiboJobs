@@ -1,11 +1,11 @@
-.login-container {
+.loginContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 71.2px);
   background-color: var(--background);
 
-  .login-box {
+  .loginBox {
     background-color: var(--card);
     color: var(--card-foreground);
     padding: 2rem;
@@ -59,7 +59,7 @@
       }
     }
 
-    .signup-link {
+    .signupLink {
       margin-top: 1rem;
       font-size: 0.9rem;
       color: var(--muted-foreground);
