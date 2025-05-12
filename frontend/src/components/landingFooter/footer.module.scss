@@ -1,0 +1,40 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem 1rem 1rem;
+  background: var(--background);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+.techs {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  filter: grayscale(0.2) contrast(1.1);
+  transition: filter 0.2s;
+  &:hover {
+    filter: none;
+  }
+}
+
+.credit {
+  color: var(--muted-foreground);
+  font-size: 1rem;
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
