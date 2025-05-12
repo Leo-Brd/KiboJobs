@@ -1,8 +1,8 @@
 context.md
 
 **/.env
-*/env/
+**/env/
 **/__pycache__/
 
-*/node_modules/
-*/.next/
+**/node_modules/
+**/.next/

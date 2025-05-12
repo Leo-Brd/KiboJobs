@@ -4,28 +4,25 @@
 .landingPage_main__q3K9l {
   padding: 2rem;
   text-align: center;
+  height: calc(100vh - 71.2px);
 }
-
-.landingPage_title__7Hsoq {
+.landingPage_main__q3K9l .landingPage_title__7Hsoq {
   font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 1rem;
 }
-
-.landingPage_description__yKckS {
+.landingPage_main__q3K9l .landingPage_description__yKckS {
   font-size: 1.2rem;
   color: var(--foreground);
   margin-bottom: 2rem;
 }
-
-.landingPage_features__vMTzD {
+.landingPage_main__q3K9l .landingPage_features__vMTzD {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
 }
-
-.landingPage_feature__kULL6 {
+.landingPage_main__q3K9l .landingPage_features__vMTzD .landingPage_feature__kULL6 {
   background-color: var(--card);
   color: var(--card-foreground);
   padding: 1rem;
@@ -35,18 +32,15 @@
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.landingPage_feature__kULL6:hover {
+.landingPage_main__q3K9l .landingPage_features__vMTzD .landingPage_feature__kULL6:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-
-.landingPage_feature__kULL6 h3 {
+.landingPage_main__q3K9l .landingPage_features__vMTzD .landingPage_feature__kULL6 h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-
-.landingPage_feature__kULL6 p {
+.landingPage_main__q3K9l .landingPage_features__vMTzD .landingPage_feature__kULL6 p {
   font-size: 1rem;
   color: var(--muted-foreground);
 }

@@ -6,11 +6,9 @@ export default function SignupPage() {
       <div className={styles.signupBox}>
         <h1>Créer un compte</h1>
         <form>
-          <input type="text" placeholder="Nom complet" required />
-          <input type="email" placeholder="Adresse email" required />
-          <input type="password" placeholder="Mot de passe" required />
-          <input type="text" placeholder="Objectif de recherche (ex: Développeur Web)" />
-          <input type="url" placeholder="Lien vers votre CV (optionnel)" />
+          <input type="text" name="username" placeholder="Nom complet" required />
+          <input type="email" name="email" placeholder="Adresse email" required />
+          <input type="password" name="password" placeholder="Mot de passe" required />
           <button type="submit">S'inscrire</button>
         </form>
         <p className={styles.loginLink}>

@@ -16,6 +16,10 @@ export default function RootLayout({
         <meta name="keywords" content="emploi, stage, alternance, recherche d'emploi, candidatures, tableau de bord, KiboJobs" />
         <meta name="author" content="LeoBrd" />
         <meta name="robots" content="index, follow" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet" />
       </head>
       <body>
         <Header />
