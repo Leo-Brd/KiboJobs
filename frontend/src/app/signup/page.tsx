@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import styles from './signup.module.scss';
 import { useAppDispatch } from '../../store/hooks';
 import { setCredentials } from '../../store/authSlice';
+import Header from '@/components/landingHeader/header';
+import Footer from '@/components/landingFooter/footer';
 
 interface FormData {
   username: string;
@@ -59,41 +61,45 @@ export default function SignupPage() {
   };
 
   return (
-    <main className={styles.signupContainer}>
-      <div className={styles.signupBox}>
-        <h1>Créer un compte</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Nom complet"
-            value={formData.username}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Adresse email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mot de passe"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">S'inscrire</button>
-        </form>
-        {error && <p className={styles.error}>{error}</p>}
-        <p className={styles.loginLink}>
-          Vous avez déjà un compte ? <a href="/login">Connectez-vous</a>
-        </p>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main className={styles.signupContainer}>
+        <div className={styles.signupBox}>
+          <h1>Créer un compte</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Nom complet"
+              value={formData.username}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">S'inscrire</button>
+          </form>
+          {error && <p className={styles.error}>{error}</p>}
+          <p className={styles.loginLink}>
+            Vous avez déjà un compte ? <a href="/login">Connectez-vous</a>
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

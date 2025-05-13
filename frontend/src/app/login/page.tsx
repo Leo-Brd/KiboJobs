@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 import styles from './login.module.scss';
 import { useAppDispatch } from '../../store/hooks';
 import { setCredentials } from '../../store/authSlice';
+import Header from '@/components/landingHeader/header';
+import Footer from '@/components/landingFooter/footer';
 
 interface FormData {
   email: string;
@@ -48,33 +50,37 @@ export default function LoginPage() {
   };
 
   return (
-    <main className={styles.loginContainer}>
-      <div className={styles.loginBox}>
-        <h1>Connexion</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Adresse email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Mot de passe"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Se connecter</button>
-        </form>
-        {error && <p className={styles.error}>{error}</p>}
-        <p className={styles.signupLink}>
-          Vous n'avez pas de compte ? <a href="/signup">Inscrivez-vous</a>
-        </p>
-      </div>
-    </main>
+    <>
+      <Header />
+      <main className={styles.loginContainer}>
+        <div className={styles.loginBox}>
+          <h1>Connexion</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Adresse email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Mot de passe"
+              value={formData.password}
+              onChange={handleChange}
+              required
+            />
+            <button type="submit">Se connecter</button>
+          </form>
+          {error && <p className={styles.error}>{error}</p>}
+          <p className={styles.signupLink}>
+            Vous n'avez pas de compte ? <a href="/signup">Inscrivez-vous</a>
+          </p>
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

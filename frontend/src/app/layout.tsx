@@ -25,10 +25,8 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
-          <Header />
           {children}
         </Providers>
-        <Footer />
       </body>
     </html>
   );
