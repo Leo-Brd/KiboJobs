@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from '@/components/landingHeader/header';
 import Footer from '@/components/landingFooter/footer';
+import { Providers } from '../store/Providers';
 
 export default function RootLayout({
   children,
@@ -23,8 +24,10 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Habibi&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
         <Footer />
       </body>
     </html>

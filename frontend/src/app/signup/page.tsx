@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './signup.module.scss';
+import { useAppDispatch } from '../../store/hooks';
+import { setCredentials } from '../../store/authSlice';
 
 interface FormData {
   username: string;
@@ -15,6 +17,7 @@ export default function SignupPage() {
   const [formData, setFormData] = useState<FormData>({ username: '', email: '', password: '' });
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -31,6 +34,20 @@ export default function SignupPage() {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
+        // Optionnel : login automatique après inscription
+        const loginResponse = await fetch(`${BACKEND_URL}/api/accounts/login/`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: formData.email, password: formData.password }),
+        });
+        if (loginResponse.ok) {
+          const loginData = await loginResponse.json();
+          localStorage.setItem('accessToken', loginData.access);
+          dispatch(setCredentials({ accessToken: loginData.access, user: { email: formData.email, username: formData.username } }));
+          router.push('/dashboard');
+        } else {
+          router.push('/login');
+        }
         router.push('/login');
       } else {
         const data = await response.json();

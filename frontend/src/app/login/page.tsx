@@ -2,6 +2,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './login.module.scss';
+import { useAppDispatch } from '../../store/hooks';
+import { setCredentials } from '../../store/authSlice';
 
 interface FormData {
   email: string;
@@ -14,6 +16,7 @@ export default function LoginPage() {
   const [formData, setFormData] = useState<FormData>({ email: '', password: '' });
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -32,6 +35,8 @@ export default function LoginPage() {
       if (response.ok) {
         const data = await response.json();
         localStorage.setItem('accessToken', data.access);
+        // Récupérer les infos utilisateur (optionnel, ici juste l'email)
+        dispatch(setCredentials({ accessToken: data.access, user: { email: formData.email, username: '' } }));
         router.push('/dashboard');
       } else {
         const data = await response.json();
