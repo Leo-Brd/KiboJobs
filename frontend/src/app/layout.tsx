@@ -1,6 +1,4 @@
 import "./globals.css";
-import Header from '@/components/landingHeader/header';
-import Footer from '@/components/landingFooter/footer';
 import { Providers } from '../store/Providers';
 
 export default function RootLayout({

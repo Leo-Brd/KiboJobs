@@ -26,6 +26,9 @@ export default function DashboardMenu() {
           <Link href="/dashboard">Vue globale</Link>
         </li>
         <li>
+          <Link href="/dashboard/applications">Mes candidatures</Link>
+        </li>
+        <li>
           <Link href="/dashboard/kanban">Kanban</Link>
         </li>
         <li>

@@ -1,0 +1,54 @@
+.kanbanMain {
+  padding: 2rem;
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.kanbanBoard {
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.column {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  padding: 1.5rem 1rem;
+  min-width: 280px;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 400px;
+}
+
+.column h2 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.cardsPlaceholder {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-foreground);
+  font-style: italic;
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: 1.5rem 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 1.05rem;
+}
