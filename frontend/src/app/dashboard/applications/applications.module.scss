@@ -27,10 +27,9 @@
   font-weight: 600;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
   cursor: pointer;
-  opacity: 0.7;
   transition: background 0.18s;
   &:hover {
-    background: var(--primary/80);
+    background: var(--ring);
   }
 }
 

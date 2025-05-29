@@ -1,7 +1,8 @@
 'use client';
 import React, { useState } from 'react';
-import EntrepriseCard from '@/components/applicationCard/ApplicationCard';
-import EntrepriseFilters from '@/components/applicationFilters/ApplicationFilters';
+import ApplicationCard from '@/components/applicationCard/ApplicationCard';
+import ApplicationModal from '@/components/applicationCard/ApplicationModal';
+import ApplicationFilters from '@/components/applicationFilters/ApplicationFilters';
 import styles from './applications.module.scss';
 
 const FAKE_APPLICATIONS = [
@@ -38,30 +39,36 @@ const FAKE_APPLICATIONS = [
 
 export default function MesCandidaturesPage() {
   const [filter, setFilter] = useState('all');
+  const [modalOpen, setModalOpen] = useState(false);
 
   const filtered =
     filter === 'all'
       ? FAKE_APPLICATIONS
-      : FAKE_APPLICATIONS.filter((e) => e.source === filter);
+      : FAKE_APPLICATIONS.filter((a) => a.source === filter);
 
   return (
     <div className={styles.carnetContainer}>
       <div className={styles.headerRow}>
         <h1>Mes candidatures</h1>
-        <button className={styles.addBtn} disabled>
+        <button className={styles.addBtn} onClick={() => setModalOpen(true)}>
           + Ajouter une candidature
         </button>
       </div>
-      <EntrepriseFilters selected={filter} onChange={setFilter} />
+      <ApplicationFilters selected={filter} onChange={setFilter} />
       <div className={styles.cardsGrid}>
         {filtered.length === 0 ? (
           <div className={styles.emptyMsg}>Aucune candidature trouvée pour ce filtre.</div>
         ) : (
-          filtered.map((e, idx) => (
-            <EntrepriseCard key={e.name + idx} {...e} />
+          filtered.map((a, idx) => (
+            <ApplicationCard key={a.name + idx} {...a} />
           ))
         )}
       </div>
+      <ApplicationModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        onSubmit={() => setModalOpen(false)}
+      />
     </div>
   );
 }
